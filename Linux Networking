@@ -1,1 +1,6 @@
 
+Background
+TCP is for the receiving host to know which application the packet contents are for.  It does this by mapping ports to apps.  Ports are not physical, they are virtual concepts.
+
+The IP level and below is for the sending host to know where to send the packet so that it gets to the right receiver.  To do this, network elements (configuration) is allocated to a physical device. This includes an IP address (static assignment or by DHCP including the subnet (mask).  As well the MAC address. which is mapped to ip address by ARP.
+
