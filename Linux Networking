@@ -1,6 +1,24 @@
 
 Background
 TCP is for the receiving host to know which application the packet contents are for.  It does this by mapping ports to apps.  Ports are not physical, they are virtual concepts.
+Server side apps use well-know ports so clients know how to connect to them.  Client side ports are chosen because they are unused.
 
 The IP level and below is for the sending host to know where to send the packet so that it gets to the right receiver.  To do this, network elements (configuration) is allocated to a physical device. This includes an IP address (static assignment or by DHCP including the subnet (mask).  As well the MAC address. which is mapped to ip address by ARP.
 
+DNS is Domain Name Server.  It is a seperate server on the Internet that returns the name of a Domanin given an IP address.  Resolving domain names involves first a look-up in the /etc/host files and then  a query to the DNS server whose address is in /etc/resolv.conf.
+This file can be managed by NetworManager nmcli.
+
+Don't get confused with DHCP, Dynamic Host Configuration Protocal.  DHCP configure the devices on a client side host (including assigning an IP address) so that the device traffic can be routed.  DHCP server software is usually on a router though it can be on a host.
+
+The router can be on a host but is usually on a seperate machine.  It's ip address is the default gateway, or the IP address that does not match any subnet mask.  It uses DNS to route external traffic.  Troubleshooting tools include ncat (formerly netcat), nmap, ss and nslookup.
+
+Tools
+IP commannd relaces old ifconfig commands. Changes will not survive a restart unless the correct file is edited manually.
+arp = ip neighbor
+ifconfig = ip address ip link is -s
+iwconfig = iw
+nameif = ip link
+netstat = ip route
+route = ip route
+
+NetworkManager can do anything ip command can do.  Advantage is that changes survive restarts so you don't need to know the configuration files.
