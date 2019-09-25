@@ -1,1 +1,4 @@
+DHCP is Dynamic Host Configuration Protocal.  DHCP configure the devices on a client side host including assigning an IP address.  
+DHCP server usually resides on the router but can be on the host too.
 
+DHCP configurations are overwritten by static configurations in /etc/hostnames?
