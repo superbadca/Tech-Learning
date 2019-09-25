@@ -1,1 +1,3 @@
 
+DNS is Domain Name Server.  It is a seperate server on the Internet that returns the name of a Domanin given an IP address.  Resolving domain names involves first a look-up in the /etc/host files and then  a query to the DNS server whose address is in /etc/resolv.conf.
+This file can be managed by NetworManager nmcli.
