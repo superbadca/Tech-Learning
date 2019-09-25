@@ -1,0 +1,1 @@
+NetworkManager can do anything ip command can do.  Advantage is that changes survive restarts so you don't need to know the configuration files.
