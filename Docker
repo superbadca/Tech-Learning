@@ -5,3 +5,7 @@ Container is a running instance of an image.  This is like an object being an in
 
 When you use the docker run command you enter a new process space with a new OS and environment.
 
+When using Docker Hub, it is common to use 'image' and 'repo' are used interchangeably.  Repos contain 1 or more images, that are the same, each with one or more tags.  Really, it is just an image with different versions tagged like git and github.
+
+Whenever possible, use official images or images with lots of pulls and stars.  What is good about Docker Hub is that it scans your images for security vulnerabilities.
+
