@@ -1,0 +1,8 @@
+Dockerhub has the idea of automated workflow built in.  There is a 'build settings' tab which allows you to listen for github events.  You can listen for a git commit and take actions. For example:
+- you push code to github 
+- Github compiles code and kick off test tasks using Jenkins
+- Dockerhub listens for github event, build an image on Dockerhub
+- send a webhook to production environment
+- Prod receive a webhook 
+- pull the image to the production environment
+- restart the containers
