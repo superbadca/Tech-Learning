@@ -1,0 +1,10 @@
+After Installing Docker verify that your installation was successful by
+> docker run hello-world
+
+If this works you know 
+- that the docker client can talk to both your terminal and the doocker daemon
+- that the the daemon can talk to the docker hub.  The hello-world image is downloaded if neccesary (that is, it is pulled)
+- that the daemon was able to run the little test hello-world image that was downloaded from the hub and create a container
+
+> docker --version 
+lets you see that 
