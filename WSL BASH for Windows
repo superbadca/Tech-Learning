@@ -1,0 +1,8 @@
+I was frustrated with not being able to use the linux commands that I saw in examples.  I downloaded WSL (Windows Subsystem Linux) and am using it as my terminal.  
+
+WSL is just a mapping of Bash commands to Windows modules, and is therefor quite limited.  Many bash tools that you download just won't work.  I chose Ubuntu 18.04
+
+There is a WSL2 in the works that will actually be linux running in a custom VM.  This will be much more robust, but you will need the Windows Professional to run the VM.
+
+If you are in the wsl terminal and want access to files on your windows C drive file system, the mount point is:
+/mnt/c
