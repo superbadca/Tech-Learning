@@ -1,0 +1,7 @@
+Images and Containers
+An image is a file that contains everything needed to run, conceptually like an image. Like an image, it doesn't change and has no state. If you make a change to the image it will be lost when you stop the container.
+
+Container is a running instance of an image.  This is like an object being an instance of a class.  An advantage is that you can run many containers from a single image without using more disk space.  You will use more RAM, each instance needing it's own process space.
+
+When you use the docker run command you enter a new process space with a new OS and environment.
+
