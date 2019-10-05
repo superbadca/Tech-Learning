@@ -1,1 +1,12 @@
+FROM command imports base image from docker hub.  Rememeber to try to import an official one. If you import say 2.7, Docker will always give you the latest 2.7 version, for example 2.7.13.  This should be just bug fixes and nothing that should break your build.  However, if the wanted to you could specify a more specific build such 2.7.13 and be sure of getting it.  Your build process would be more deterministic, but you wouldn't get the latest bug fixes.
 
+From scratch means no image is copied and pasted as your starting point.
+
+Alpine is the smallest footprint linux, only about 5 MB, which excludes the kernel.  The rest of the OS, the kernel, is about 130 MB giving the OS about 140MB in total size.  Unlike the other common distros: Debian, Ubuntu, RHEL, Arch Linux and CentOS, Alpine does not use systemd.
+
+From python:2.7-alpine
+# the : is used for tags.  This is the tag for the latest python release on alpine which is 2.7
+
+RUN mkdir/app
+# the RUN command runs a command from the command line of the container.  Since we are using a linux distro, alpine, in our image, the bash mkdir command is run
+# the app dir is where Nick wants to store the application source code.
