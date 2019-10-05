@@ -1,0 +1,5 @@
+redis is a key-value store used for caching as well as persistance.
+
+Firstly, as a cache it is an in-memory nosql db that just has commands to create and store various data structures like lists etc, without using SQL commands.
+It can also write to disk using either journaling (incremental) or snapshots. 
+It is popular generally, but especially for containers.
