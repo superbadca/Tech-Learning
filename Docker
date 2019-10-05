@@ -9,3 +9,8 @@ When using Docker Hub, it is common to use 'image' and 'repo' are used interchan
 
 Whenever possible, use official images or images with lots of pulls and stars.  What is good about Docker Hub is that it scans your images for security vulnerabilities.
 
+Docker Commands
+Docker Pull
+There can be many registries for docker images.  The default registry is docker hub.  If a namespace (path) is not provided, the docker command will assume you are asking for an official image.  Official images do not have namespaces.  To pull an unofficial image, you have to provide the path that is given in the "Docker pull command" window.
+
+Docker store will replace docker hub.  It will be like google play.
