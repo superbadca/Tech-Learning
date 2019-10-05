@@ -10,3 +10,17 @@ From python:2.7-alpine
 RUN mkdir/app
 # the RUN command runs a command from the command line of the container.  Since we are using a linux distro, alpine, in our image, the bash mkdir command is run
 # the app dir is where Nick wants to store the application source code.
+# Note that "app" will not conflict with any other app dir you have since it is in the container namespace.
+
+WORKDIR /app
+# This sets the working directory environment variable to /app.  Now every time a path is specified, it will be interpreted as starting from /app
+
+COPY requirements.txt requirements.txt
+# the 1st parameter refers to a file on the host filesystem  starting from the same directory as the Dockerfile. In our case requirements.txt is in the same dir as the Dockerfile so we don't have to write out a path.   
+#the 2nd parameter is the destination path in the container filesystem starting from the Workdir, which is /app.
+
+RUN pip install -r requirements.txt
+# install the Python package dependencies before we install flask.
+
+COPY . .
+# copy the files from the current host directory (the Dockerfile dir) to the container current directory (always defaults to WORKDIR = /app.
