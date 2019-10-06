@@ -1,1 +1,26 @@
 
+docker image build -t web1 .
+# build an image and tag it as web 1, from the files in the current directory
+
+docker image inspect web1
+# will give us information dump including how many layers were created, commmands run
+
+docker image build -t web1:1.0 .
+
+docker image ls
+# this lists images including the dangling image with no name
+
+docker image rm web1:1.0
+#deletes image
+
+docker login
+#logs into docker hub.  Only have to do this once because auth is saved on config.json file
+
+docker image tag web1 superbadca/web1:latest
+# Before we push the image to docker hub, we have to associate it with a repo name, in our case superbadca/web1:latest 
+
+docker image push superbadca/web1:latest
+# push to hub
+
+docker image rm -f XXXXC
+# the -f is because the image has 2 tags. very tired
