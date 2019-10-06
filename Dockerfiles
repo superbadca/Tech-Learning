@@ -1,3 +1,6 @@
+Dockerfiles execute one line at a time from top to bottom.  But Docker is smart and will only rebuild or download if there has been a change.  But will also pull every item below that point in the Dockerfile.  It is thus important to put the most frequently changed components at the bottom of the Dockerfile.
+Layers can be cached and re-used accross images.  50 flask images could use the same python layer.
+
 FROM command imports base image from docker hub.  Rememeber to try to import an official one. If you import say 2.7, Docker will always give you the latest 2.7 version, for example 2.7.13.  This should be just bug fixes and nothing that should break your build.  However, if the wanted to you could specify a more specific build such 2.7.13 and be sure of getting it.  Your build process would be more deterministic, but you wouldn't get the latest bug fixes.
 
 From scratch means no image is copied and pasted as your starting point.
@@ -23,4 +26,13 @@ RUN pip install -r requirements.txt
 # install the Python package dependencies before we install flask.
 
 COPY . .
-# copy the files from the current host directory (the Dockerfile dir) to the container current directory (always defaults to WORKDIR = /app.
+# copy the files from the current host directory (the Dockerfile dir) to the container current directory (always defaults to WORKDIR = /app.)  I think this is recursive so it really means that the source files are copied into the container filesystem.
+
+LABEL maintainer="Pierre"
+# this label is optional but is often useful.  There are commands that take action based on the label.  LABELS 
+
+CMD flask run --host=0.0.0.0 port=5000
+# CMD is different than the RUN command.  The RUN command is executed as part of building.  CMD is executed when the container has been built and is being run.
+# The CMD command should be the last command in the dockerfile.
+# This command starts a flask development web server on the localhost.  Note that this server is just for dev, not production.
+This executes when the 
