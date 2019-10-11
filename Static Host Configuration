@@ -1,0 +1,16 @@
+If you aren't using DHCP, your config file would look like
+
+DEVICE=enp0s3
+BOOTPROTO=none
+ONBOOT=yes
+PREFIX=24 (this is the subnet mask)
+IPADDR=10.0.1.27
+
+note that if you made a change you'd have to 
+nmcli c reload   to have the connection reloaded.
+
+The easiest way to give a name to an ip address is in the
+/etc/hosts file
+
+This is actually important test hack - have unwanted sites resolve to bad names
+See github.com/StevenBlack/hosts
