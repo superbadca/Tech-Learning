@@ -1,0 +1,11 @@
+System is an init system daemon for Linux OS. Created by Red Hat, it is used by almost all Linux distros.  It is not used by Alpine though.
+
+It's important components are 
+- logind
+- networkd
+- systemctl
+
+Important config files
+/etc/systemd/system    (config)
+/usr/lib/systemd/system
+
