@@ -1,4 +1,9 @@
-DHCP is Dynamic Host Configuration Protocal.  DHCP configure the devices on a client side host including assigning an IP address.  
+DHCP is Dynamic Host Configuration Protocal.  DHCP configure the devices on a client  host including assigning an IP address.  
 DHCP server usually resides on the router but can be on the host too.
+
+This is an example of a dynamically configured network interface config file:
+DEVICE=enp0s3
+BOOTPRO=dhcp
+ONBOOT=Yes
 
 DHCP configurations are overwritten by static configurations in /etc/hostnames?
