@@ -1,0 +1,3 @@
+Redis is an in-memory fast cache that can be used as a cache or a no-sql database.  Persistance is avavilable via snapshots, journal entries.
+
+Redis has it's own command language. 
