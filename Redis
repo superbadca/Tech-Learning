@@ -1,3 +1,3 @@
-Redis is an in-memory fast cache that can be used as a cache or a no-sql database.  Persistance is avavilable via snapshots, journal entries.
+Redis is an in-memory fast cache that can be used as a cache or a no-sql database. Transactions are performed agains the in-memory cache and then the data is stored on disk in a fomat that is not suitable for queries. Persistance is avavilable via snapshots, journal entries.
 
-Redis has it's own command language. 
+Redis has it's own command language for extracting data.  It does not use SQL and cannot provide facilities such as secondary indexes to speed up processing.  It relies on horizontal scaling, and is thus suitable for the cloud.
