@@ -1,5 +1,7 @@
 Jupyter can be used as an IDE to make learning Python easy and an entry point to machine learning.
+It's strength is displaying data
 There are 2 components to Jupyter: the app which is written is JS and runs in the browser, and a server.
+The app presents cells, each of which is a Python Shell.  You can write text in Markdown or code in Python and it gets executed right away. Text and code can be mixed.  The files are stored locally in JSON.
 
 This is from the lynda (linkedin) course called "Introducing Jupyter"
 
@@ -24,6 +26,25 @@ or
 Saving
 UI> file + save
 This will save but also create a checkpoint.  The checkpoint means is saving the previous version of the file.  There is only one version retained. The file type of the backed-up notebook is .ipynb
+
+Jupyter Interface
+After selecting a notebook:
+"View" opens that file.
+"Edit" opens the raw JSON of that file.  This won't be commonly used.
+
+Each cell can be run by <shift><enter>
+
+The cells can be moved by the up and down arrows.
+You can search for commands on the right hand side.  This is aking to Excel.
+
+Modes
+Jupyter has the same modes as VI, but it switches around the terminology.
+Edit mode (green coloured cell) is like insert in VI and has commands just for the content. <ctrl> key is for these shortcuts.
+Command mode (blue cell) is for notebook-level commands. It is entered by the <esc> key. <alt> key is for these shortcuts.
+
+"H" shows shortcuts
+"P" shows command palette.
+
 
 
 
