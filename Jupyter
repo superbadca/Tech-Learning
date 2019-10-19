@@ -1,0 +1,29 @@
+Jupyter can be used as an IDE to make learning Python easy and an entry point to machine learning.
+There are 2 components to Jupyter: the app which is written is JS and runs in the browser, and a server.
+
+This is from the lynda (linkedin) course called "Introducing Jupyter"
+
+Installing Jupyter
+Don't bother.  Install Anaconda - a Python distro instead.  It comes with Jupyter, NumPy, pandas and other data analysis tools.
+Go to anaconda.com and download the 3.7 version.  Don't bother with VS Code.
+
+Starting Jupyter
+> jupyter notebook
+
+Stopping Jupyter
+Note that closing the browser does not stop the process.  
+Either:
+from the notebook tab> close and halt
+from the dashboard> select and shutdown
+
+You can close the Jupyter server by
+> ctrl-c ctrl-c from the terminal
+or 
+>quit button at the top ot the page.
+
+Saving
+UI> file + save
+This will save but also create a checkpoint.  The checkpoint means is saving the previous version of the file.  There is only one version retained. The file type of the backed-up notebook is .ipynb
+
+
+
