@@ -35,7 +35,7 @@ After selecting a notebook:
 Each cell can be run by <shift><enter>
 
 The cells can be moved by the up and down arrows.
-You can search for commands on the right hand side.  This is aking to Excel.
+You can search for commands on the right hand side.  This is akin to Excel.
 
 Modes
 Jupyter has the same modes as VI, but it switches around the terminology.
@@ -44,6 +44,27 @@ Command mode (blue cell) is for notebook-level commands. It is entered by the <e
 
 "H" shows shortcuts
 "P" shows command palette.
+
+Jupyter Magics (commands)
+Line magics
+Give you the ability to execute bash-like commands from within Jupyter.  This is for commands like cp, cat, ls
+
+Cell Magics
+Execute bash-like commands on the cell. They are prefaced with %%.  
+
+Exporting Notebooks
+Notebooks can be exported using download commands or the nbconvert tool from a terminal command line. They notebooks can be converted to static HTML or PDF.
+
+Sharing Notebooks
+Github is used to sharing Notebooks.
+The Jupyter project has many interesting notebooks.
+
+Gitbub gists also have interesting notebooks.
+Secret and Public Gists.
+
+There is also the nbviewer for sharing notebooks, without the other services Git provides. 
+
+
 
 
 
