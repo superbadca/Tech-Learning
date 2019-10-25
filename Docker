@@ -34,6 +34,7 @@ FLASK_APP=app.py
 -d = run in detached mode (in the background).  That way you'll be able to continue to use your terminal for input.
 -- restart on-failure = docker will restart the container if it crashes.  Note this is incompatible with the -rm flag
 web1 = the name of the docker image.
+web1 = name of container
 
 docker container logs 
 = run logs to your terminal
