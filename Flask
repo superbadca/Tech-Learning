@@ -1,0 +1,1 @@
+When you are developing Flask app you have to run with the FLASK_DEBUG=1.  If you don't, you'll have to restart the flask server every time you see your code changes instead of just reloading the page.
