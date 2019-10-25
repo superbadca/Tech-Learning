@@ -19,3 +19,28 @@ Dockerfiles
 A Dockerfile is like the python requirements.txt file.
 
 A Docker image consists of files called layers.  Docker understands when a layer has changed and uses that knowledge to make efficient pulls and bilds.
+
+Running a Docker Container
+docker container run -it --rm --name web1 -p 5000:5000 -e FLASK_APP=app.py -d web1
+-i = interactive, meaning you type in commands from your terminal to the container ie stdin is open
+-t = allocates a terminal (tty)
+-rm = remove the container when it is stopped.  Otherwise, you can see you stopped containers with docker container ls -a
+--name "name" = 
+-p = publish container port to host port (bind)
+1st port = docker host port. we can type this into our browser.  You cannot use a host port more than once.  If you ommit this port docker will assign a random one.
+2nd port = docker container port.  This is the port we already configured the flask app to listen on.
+-e = pass in environment variable to the container.  In this case an env variable called FLASK_APP is passed in. This is for flask, not docker.
+FLASK_APP=app.py  
+-d = run in detached mode (in the background).  That way you'll be able to continue to use your terminal for input.
+-- restart on-failure = docker will restart the container if it crashes.  Note this is incompatible with the -rm flag
+web1 = the name of the docker image.
+
+docker container logs 
+= run logs to your terminal
+
+docker container logs -f
+= like the unix tail -f commands real time tail
+
+docker container stats
+
+
