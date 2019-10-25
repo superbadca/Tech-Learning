@@ -1,0 +1,2 @@
+
+sudo service docker restart = restart the docker service.
