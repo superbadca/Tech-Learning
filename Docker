@@ -36,12 +36,15 @@ FLASK_APP=app.py
 web1 = the name of the docker image.
 web1 = name of container
 
+also use -e FLASK_DEBUG=1 to run flask in debug mode.   That way you don't have to stop and start the flask server to see code changes
 docker container logs 
 = run logs to your terminal
 
 docker container logs -f
 = like the unix tail -f commands real time tail
 
-docker container stats
+note that changes you make in your code will not be reflected in the browswer because changes in the container source are not in the image that is run.  You have to re-build the image with the modified source code firs.  This is the motivation for volumes.
+
+
 
 
