@@ -17,3 +17,47 @@ Container exec command
 ------------------------
 This is a very useful.  It puts you inside your container.  Your can run 
 docker container exec -it web1 bash.
+
+ifconfig and ping have been removed from alpine and slim. to get it back
+Alpine: RUN apk update && apk add iputils
+Slim RUN apt-get update && apt-get install 
+ls iputils-ping
+
+using whatever tools you can look discover the ip addresses of your containers inetaddr. 
+to test that the containers can talk to each other:
+docker exec web2 ping inetaddr 
+or docker exec redis cat /etc/hosts for the redis container example
+
+Create your own bridge network so that Docker automatically sets up DNS and you can refer to the containers on the network by name instead of ip address.
+
+>docker network create --driver bridge firstnetwork
+where firstnetwork is the arbitrary name of the network.  The bridge driver is used when you only have 1 host.  Use the overlay driver to network containers on different hosts.
+
+> docker network inspect firstnetwork
+
+to create a container on a particular network
+> docker container run -rm -itd -p 5000:5000 -e FLASK_APP=app.py -e FLASK_DEBUG=1 -name web2 -v $PWD:/ --net firstnetwork web2
+
+Since flask depends on redis, start redis 1st.  No real problem, just an error.
+
+Named volumes: ideal for databases
+> docker volume create web2_redis
+>docker volume inspect web2redis. 
+You will see a mount point but you really shouldn't need it.
+
+use the named volume.
+> docker container run -rm -itd -p 6379:6379 --name redis --net firstnetwork -v web2_redis:/data redis:3.2-alpine
+note that the /data which is the directory where the data will be stored in the volume.  This has been decided by the image creators and is documented on the redis page of the dockerhub.  You always need to know this fact for each different db.
+
+Note that Redis doesn't save to disk automatically.  It is an in-memory store.  To force it to save from docker
+> docker exec redis redis-cli SAVE 
+
+You should not persist to the docker host in production because the architecture is less portable. Persisting data in DB's in dev is ok.
+
+
+3rd way of persisiting data (not mounting volume or named volume)
+Use the VOLUME command in the Dockerfile. This seems to create a mount.
+--volumes-from web2  ....... redis2
+
+.dockerignore file is like gitgnore file.
+
