@@ -1,0 +1,4 @@
+Dockerfiles put the docker commands that build images into files. They are run at build time.
+Docker Compose puts the commands that create containers into files. They are run at initialization time.
+
+Docker Compose translates Docker run etc commands into YAML files that declare and represent containers etc as objects with attributes etc.
