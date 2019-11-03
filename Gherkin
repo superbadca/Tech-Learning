@@ -1,7 +1,13 @@
-Gherkin is a text specification language that comes from the BDD and the Ruby world.
+Gherkin is a text specification language that comes from the BDD and the Ruby world.  The standard is maintained by the Cucumber project.
+The files have a .feature extension.
 
 For Python, there is Python Behave and pytest-bdd to read the Gherkin and run the tests.
 
+Feature: Feature Name - this is just for documentation
+There should be only 1 feature per file.
+There are roughly 12 Scenarios per feature.
+
+Every testcase is a Scenario, and should be executable seperately.
 The format of a Scenario is:
 Given: preconditions, no user interactions
 When: action that is visible to user
@@ -9,8 +15,12 @@ Then: result that is visible to user
 
 Given, When, Then, And, But are called "Steps"
 There should be less that 10 steps in a scenario.
+Given, When, Then statements can all be paramerized.
+The step definition is string matched by title to a software implementation.
 
-There are roughly 12 Scenarios per feature.
+And, But are not parameterized.  They are just more Given's, but are used to be more readable.
+
+Background: this can be run before the Givens. There is only one per feature.
 
 Tags @ are used to control which test are run.  That is, you can tag some tests as @smoke 
 
