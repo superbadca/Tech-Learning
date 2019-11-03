@@ -1,0 +1,8 @@
+Web Services Gateway Interface
+
+This is a standard for connecting web servers like nginx to web applications.  
+nginx will pass http requests gunicorn or uWSGI which calls a standard callable object in the application.  The means that the web application framework like flask doen't have to know how to handle traffic.  
+
+The WSGI server will run as a seperate process listening on its own port.  It runs in a seperate container with the web application.
+
+This is mostly important only at deployment time when you have to deploy the WSGI server behind nginx.
