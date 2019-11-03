@@ -1,3 +1,12 @@
 Golem is a Selenium Python Framework
 
 kibitzer is a tool that reads data from urls, transforms the data and notifies.  It can be run after Selenium actions.
+
+htmlunit is another headless browser.  I think these projects have become obsolte because of the Chrome -headless option.
+
+tox.ini is an init file for tox, a command line test tool for python
+.rst file is python tech documentation
+
+Nightwatchjs is more of an end-to-end solution.  It includes a test runner and reporter.  You can scripts in node.js. It uses w3c webdriver as well.  I think you can run selenium node.js scripts from Nightwatchjs.
+
+Beautiful Soup is used for parsing werbistes. Selenium would be too slow.
