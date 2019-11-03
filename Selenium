@@ -1,0 +1,28 @@
+
+Selenium is a protocol for pushing buttons on the browser. 
+Selenium 2 = Selenium Webdriver = Webdriver
+thoughtworks selenium = selenium 1
+Openqa selenium is selenium 2.
+
+SE 1 operated in the JS browser sandbox.  It couldn't go to other sites.  
+SE 2 makes api calls and no longer needs SQL injection. This makes your tests portable between browsers. The Webdriver API is a W3C standard.  Pop-ups and Alerts can be tested.
+
+JS is load and go: it executes as soon as it loads. Testing this can only be done with js unit tests.  SE is for testing workflows.  
+
+It needs a test runner like pytest to call the tests, check results, report results.
+It needs a selenium client so that you can call the broswer driver in the languate of choice.  I downloaded selenium from pip.
+
+A broswer driver is needed for selenium webdriver to talk to each browser.  For example, 
+https://chromedriver.storage.googleapis.com/index.html?path=2.37/ 
+
+In windows: I copied the chromedriver into a new folder called c:/webdrivers.
+I added a corresponding new line to the PATH, by accessing ThisPC/properties/Advanced Settings/Environment Variables
+
+Browser drivers are standalone servers that implements the WebDriver's wire protocol to work as glue between the test script and the broswer.  The driver opens up the browser and executes the actions.
+
+Selium Grid is used for parallelizing your testing.  There is a hub, which sends out tests to Nodes, which are browser/OS combinations.  This way you can do cross platform testing as well.  This is what Sauce provides.
+
+
+References
+https://code.google.com/p/selenium/wiki/InternetExplorerDriver
+https://seleniumhq.github.io/docs/wd.html is an important page because it talks about adding the needed directories to paths.
