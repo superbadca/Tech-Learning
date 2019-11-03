@@ -2,12 +2,20 @@ Gherkin is a text specification language that comes from the BDD and the Ruby wo
 
 For Python, there is Python Behave and pytest-bdd to read the Gherkin and run the tests.
 
-The format is:
+The format of a Scenario is:
 Given: preconditions, no user interactions
 When: action that is visible to user
 Then: result that is visible to user
+
+Given, When, Then, And, But are called "Steps"
+There should be less that 10 steps in a scenario.
+
+There are roughly 12 Scenarios per feature.
 
 Tags @ are used to control which test are run.  That is, you can tag some tests as @smoke 
 
 All data in the first step is put in a context variable for all steps to access.
 
+There are 3 types of data:
+- Test Case Data: input and outputs used to test features
+- Configuration Data: Variables that have to be changed to make the test cases run in a different enviroment. They are not kept with the test cases. They are kept in config files
