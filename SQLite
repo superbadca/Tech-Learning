@@ -1,11 +1,27 @@
 After installing Flask Flask-RESTful, FLASK-JWT..
 
 Python has builtin support for SQLite so we don't need to install libraries for it.
-SQLite stores data in a flat file. It is slower than real databases for writing. We'll call this one data.db.  data.db will be the URI for the datadabase.
+SQLite stores data in a flat binary file. It is slower than real databases for writing. We'll call this one data.db.  data.db will be the URI for the datadabase.
 
 Outside of code folder make a .py file.
 import sqlite3 ** this library is for making queries to the builtin sqlite database
 connection = sqlite3.connect('data.db')  ** have to initialize connection  to make connection to db
 
 cursor = connection.cursor()
-** cursor is a an entity that runs the procedure and stores the result.
+** cursor is a an entity that selects and starts. for example  the procedure and storeing the result.
+
+** to create a table, this defines columns.  This is called a query
+create_table = "CREATE TABLE users (id int, username text, password text)"
+cursor.execute(create_table)
+
+user = (1, 'jose', 'asdf')
+insert_query = "INSERT INTO users VALUES (?,?,?)
+cursor.execute(insert_query, user)
+
+users =
+
+connection.commit()
+** tell connection to save
+connection.close()
+** don't consume resources waiting for more data.
+
