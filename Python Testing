@@ -1,0 +1,16 @@
+There are a number of python concepts you need before being able to write pytest tests effectively.
+
+Context manager
+with open("test.txt") as f:    
+    data = f.read() 
+
+This is used when you have a resource like a file, thread, or in our case, a browswer that you want to use.  It is important to close the resource when you have finished and this does it automatically.
+
+Generator
+A pytest function that uses "yield" instead of "return".  This is used when you are performing an operation on a iterator but want to generate one value at a time instead of processing the whole list. The generator waits for the caller to ask for the next value. When there are no more values, it executes the rest of the function after the yield.
+This is useful when passed in to a test as a parameter.  The function up to the yield performs the set-up, value after value us fed to the calling test, and then the rest of the function is used for clean up.
+
+Arrange Act Assert
+This is a general pattern for test cases.  "Arrange" refers to the test setup (given), 'act' means perfor the action (when) and assert means evaluate pass/fail (then).
+
+
